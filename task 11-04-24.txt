@@ -1,0 +1,103 @@
+
+  Task:1
+
+
+
+package inheretence;
+
+ class Lion {
+
+    String Name;
+
+    public Lion (String Name){
+        this.Name = Name;
+    }
+
+    public void speak(){
+
+    }
+    
+}
+
+// tiger class
+
+class Tiger extends Lion {
+
+public Tiger (String Name){
+    super(Name);
+}
+
+public void speak(){
+    System.out.println(Name    +  "says  growww");
+}
+
+}
+
+// dog class
+
+class Dog extends Lion{
+    public Dog (String Name){
+        super(Name);
+    }
+
+    public void speak(){
+        System.out.println(Name + "woof");
+    }
+
+
+}
+
+
+public class sample {
+
+    public static void main(String[] args) {
+        Tiger tiger = new Tiger("Tiger");
+        Dog dog = new Dog("Dog");
+
+        tiger.speak();
+        dog.speak();
+
+    }
+}
+
+
+
+-----------------------------------------------------------------------------------------------------
+ 
+
+TASK :
+
+//what if my child class has lesser access modifier
+	// private void walk()
+
+class A{
+      
+    public A()
+    {
+      System.out.println("In A")
+    }
+}
+class B extends A
+  {
+    private void walk()
+     {
+       System.out.println("walking");
+      }
+    public void eat()
+     {
+       System.out.println("eating");
+      }
+}
+
+class Test
+{
+  public static void main(String args[])
+  {
+     B obj = new B():
+     
+      obj.eat(); // output : eating
+    
+     obj.walk();
+   // error : walk() has private access in B
+   // The method walk() from the type B is not visible
+      
